@@ -25,12 +25,20 @@
 
         {{testValue}}
 
+    <div>
+     <span>Bigs: <input type="text" ng-model="bigs"/></span>
+     <span> Smalls: <input type="text" ng-model="smalls"/></span>
+     <span>Goal: <input type="text" ng-model="goal"/></span>
+    </div>
 
 
-     <div ng-repeat="chocIndex in makeArray(5)">
+     <div ng-repeat="chocIndex in makeArray(bigs)">
          <div class="choc-big-bar">{{chocIndex + 1}}</div>
      </div>
 
+     <div ng-repeat="chocIndex in makeArray(smalls)">
+         <div class="choc-small-bar">{{chocIndex + 1}}</div>
+     </div>
 
 </body>
 </html>
