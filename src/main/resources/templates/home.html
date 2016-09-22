@@ -34,7 +34,7 @@
 
     </div>
 
-
+     <h4>Inventory</h4>
      <div ng-repeat="chocIndex in makeArray(bigs)">
          <div class="choc-big-bar">{{chocIndex + 1}}</div>
      </div>
@@ -42,6 +42,22 @@
      <div ng-repeat="chocIndex in makeArray(smalls)">
          <div class="choc-small-bar">{{chocIndex + 1}}</div>
      </div>
+
+
+
+     <div>
+     <h4>Made Chocolate</h4>
+     <div ng-repeat="chocNIndex in makeNewArray(mcBigs)">
+         <div class="choc-big-bar">{{chocIndex + 1}}</div>
+     </div>
+
+     <div ng-repeat="chocNIndex in makeNewArray(mcSmalls)">
+         <div class="choc-small-bar">{{chocIndex + 1}}</div>
+     </div>
+     </div>
+
+
+
 
 </body>
 </html>
