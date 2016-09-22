@@ -6,18 +6,6 @@ angular.module('TIYMakeChocolateApp', [])
 
             console.log("Testing");
 
-        $scope.testTimeout = function() {
-            console.log("TestTimeout() is running")
-
-            if ($scope.bigs > 5){
-                return;
-            }else {
-                $scope.bigs +=1;
-                $timeout($scope.testTimeout, 1000);
-
-            }
-        }
-
               $scope.makeArray = function(arraySize) {
                     var returnArray = [];
                     for (var i = 0; i < arraySize; i++) {
@@ -26,8 +14,19 @@ angular.module('TIYMakeChocolateApp', [])
                     return returnArray;
                 }
 
-        $scope.bigs = 1;
-        $timeout($scope.testTimeout, 3000);
+
+            $scope.chocoMaker = function(smalls, bigs, goal) {
+                $http.get("//localhost:8080/makeChocolate.json")
+                    .then(
+                        console.log("Let's make some chocolate");
+                        $scope.chocolateSolution = response.data;
+                        },
+                        function errorCallback(response) {
+                            console.log("Unable to get data");
+                        });
+
+            };
+
 
     });
 
