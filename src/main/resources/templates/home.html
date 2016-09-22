@@ -30,7 +30,7 @@
         <span> Smalls: <input type="text" ng-model="smalls"/></span>
         <span>Bigs: <input type="text" ng-model="bigs"/></span>
         <span>Goal: <input type="text" ng-model="goal"/></span>
-        <span> <input type="button" ng-click="chocoMaker()" value="Let's make some chocolate ...Ooopa loopa"/></span>
+        <span> <input type="button" ng-click="chocoMaker(smalls, bigs, goal)" value="Let's make some chocolate ...Ooopa loopa"/></span>
 
     </div>
 
@@ -42,22 +42,6 @@
      <div ng-repeat="chocIndex in makeArray(smalls)">
          <div class="choc-small-bar">{{chocIndex + 1}}</div>
      </div>
-
-
-
-     <div>
-     <h4>Made Chocolate</h4>
-     <div ng-repeat="chocNIndex in makeNewArray(mcBigs)">
-         <div class="choc-big-bar">{{chocIndex + 1}}</div>
-     </div>
-
-     <div ng-repeat="chocNIndex in makeNewArray(mcSmalls)">
-         <div class="choc-small-bar">{{chocIndex + 1}}</div>
-     </div>
-     </div>
-
-
-
 
 </body>
 </html>

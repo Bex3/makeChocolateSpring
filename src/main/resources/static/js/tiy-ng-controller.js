@@ -13,30 +13,23 @@ angular.module('TIYMakeChocolateApp', [])
                     return returnArray;
                 }
 
-        $scope.chocoMaker = function(mcSmalls, mcBigs, mcGoal) {
-            console.log("Trying to make some chocolate"))
+                       $scope.chocoMaker = function(smalls, bigs, goal) {
+                            console.log("Trying to make some chocolate")
 
-            $http.get("//localhost:8080/makeChocolate.json?smalls="+ smalls + "&bigs=" + bigs +"&goal=" + goal)
-                .then(
-                    function success(response) {
-                            console.log(response.data);
-                            console.log("made chocolate");
-                            $scope.chocolateSolution = response.data;
+                            $http.get("//localhost:8080/makeChocolate.json?smalls="+ smalls + "&bigs=" + bigs +"&goal=" + goal)
+                                .then(
+                                    function successCallback(response) {
+                                            console.log(response.data);
+                                            console.log("made chocolate");
+                                            
 
-                    },
-                    function errorCallback(response) {
-                           console.log("Unable to get data");
-                    });
-        };
+                                    },
+                                    function errorCallback(response) {
+                                        console.log("Unable to get data");
+                                    });
+                                    console.log ("Done with the promise");
+                        };
 
-
-                             $scope.makeArray = function(arraySize) {
-                                var returnArray = [];
-                                for (var i = 0; i < arraySize; i++) {
-                                    returnArray.push(i);
-                                }
-                                return returnArray;
-                                }
 
 
     });
