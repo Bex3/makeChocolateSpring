@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!--
+{{! changing the mustache delimiter so it doesn't conflict with  }}
+{{! the default angularjs delimeters - https://mustache.github.io/mustache.5.html for more info  }}
+{{=<% %>=}}
+-->
+<html lang="en-US" ng-app="TIYMakeChocolateApp">
+<html lang="en">
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="../static/js/tiy-ng-controller.js"> </script>
+<script src="js/tiy-ng-controller.js"></script>
+<head>
+
+    <link rel="stylesheet" type="text/css" href="../static/css/styles.css">
+    <link rel="stylesheet" type=" text/css" href="css/styles.css">
+
+    <title>Welcome to the Chocolate Factory</title>
+</head>
+<body ng-controller="SampleController">
+     Willy Wonka Madness
+    <br> <br>
+
+    Unfortunately, our factory is currently under construction
+    <br><br>
+
+        {{testValue}}
+
+
+
+     <div ng-repeat="chocIndex in makeArray(5)">
+         <div class="choc-big-bar">{{chocIndex + 1}}</div>
+     </div>
+
+
+</body>
+</html>
