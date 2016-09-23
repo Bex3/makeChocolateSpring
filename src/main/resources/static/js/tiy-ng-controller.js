@@ -11,7 +11,15 @@ angular.module('TIYMakeChocolateApp', [])
                         returnArray.push(i);
                     }
                     return returnArray;
-                }
+              }
+
+              $scope.makeNewArray = function(arraySize) {
+                    var returnArray = [];
+                    for (var i = 0; i < arraySize; i++) {
+                        returnArray.push(i);
+                    }
+                    return returnArray;
+              }
 
                        $scope.chocoMaker = function(smalls, bigs, goal) {
                             console.log("Trying to make some chocolate")
@@ -21,7 +29,7 @@ angular.module('TIYMakeChocolateApp', [])
                                     function successCallback(response) {
                                             console.log(response.data);
                                             console.log("made chocolate");
-                                            
+                                            $scope.mySolution = response.data;
 
                                     },
                                     function errorCallback(response) {
