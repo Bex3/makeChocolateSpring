@@ -31,6 +31,9 @@ angular.module('TIYMakeChocolateApp', [])
                                             console.log("made chocolate");
                                             $scope.mySolution = response.data;
 
+                                            $scope.smalls = $scope.smalls - $scope.mySolution.smalls;
+                                            $scope.bigs = $scope.bigs - $scope.mySolution.bigs;
+
                                     },
                                     function errorCallback(response) {
                                         console.log("Unable to get data");
