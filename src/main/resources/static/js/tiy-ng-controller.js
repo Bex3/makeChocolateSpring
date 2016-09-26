@@ -24,7 +24,7 @@ angular.module('TIYMakeChocolateApp', [])
                        $scope.chocoMaker = function(smalls, bigs, goal) {
                             console.log("Trying to make some chocolate")
 
-                            $http.get("//localhost:8080/makeChocolate.json?smalls="+ smalls + "&bigs=" + bigs +"&goal=" + goal)
+                            $http.get("/makeChocolate.json?smalls="+ smalls + "&bigs=" + bigs +"&goal=" + goal)
                                 .then(
                                     function successCallback(response) {
                                             console.log(response.data);
